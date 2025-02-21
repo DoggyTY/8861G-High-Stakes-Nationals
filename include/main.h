@@ -24,6 +24,7 @@
  * E_CONTROLLER_MASTER is pedantically correct within the PROS styleguide, but
  * not convenient for most student programmers.
  */
+#include "pros/misc.hpp"
 #define PROS_USE_SIMPLE_NAMES
 
 /**
@@ -35,11 +36,16 @@
 #define PROS_USE_LITERALS
 
 #include "api.h"
+#include "lemlib/api.hpp"
 
 /**
  * You should add more #includes here
  */
 //#include "okapi/api.hpp"
+#include "devices.h"
+#include "config.h"
+#include "misc.h"
+#include "MCL/MCL.h"
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
@@ -52,7 +58,7 @@
 // using namespace pros;
 // using namespace pros::literals;
 // using namespace okapi;
-
+extern pros::Controller master;
 /**
  * Prototypes for the competition control tasks are redefined here to ensure
  * that they can be called from user code (i.e. calling autonomous from a
